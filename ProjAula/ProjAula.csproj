@@ -66,6 +66,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Views\" />
+	  <Folder Include="Views\" />
 	</ItemGroup>
 
 </Project>

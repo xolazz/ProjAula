@@ -38,18 +38,19 @@ namespace ProjAula.Helpers
 
             /*
              string sql = "DELETE Estado WHERE Codigo=?";
-            _conn.QueryAsync<Estado>(sql, p);
+            _conn.QueryAsync<Estado>(sql, p); 
+            feue
              */
         }
-
+         
         public Task<List<Estado>> GetAll() 
         {
-            return _conn.Table<Estado>().ToListAsync();
+            return _conn.Table<Estado>().ToListAsync(); 
         }
 
         public Task<List<Estado>> Search(string p) 
         {
-            string sql = "SELECT * FROM Estado WHERE Nome LIKE %'" + p + "'%";
+            string sql = "SELECT * FROM Estado WHERE Nome LIKE '%" + p + "%'";
             return _conn.QueryAsync<Estado>(sql);
         }
     }

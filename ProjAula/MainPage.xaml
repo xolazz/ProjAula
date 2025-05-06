@@ -16,6 +16,31 @@
 
             <Button x:Name="btnInserir" Text="Inserir" Clicked="btnInserir_Clicked"/>
 
+            <SearchBar x:Name="txtSearch" 
+                       Placeholder="Digite o nome do Estado!"
+                       TextChanged="txtSearch_TextChanged"/>
+
+            <ListView x:Name="ListEstado">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*, *, *">
+                        <Label Grid.Column="0" Text="Código"></Label>
+                        <Label Grid.Column="1" Text="Descrição"></Label>
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*, *">
+                                <Label Grid.Column="0" Text="{Binding Codigo}"></Label>
+                                <Label Grid.Column="1" Text="{Binding Nome}"></Label> <!-- Codigo e Nome, são ligaods com o arquivo Estado.cs-->
+                            </Grid>    
+                        </ViewCell>                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+
         </VerticalStackLayout>
     </ScrollView>
 
